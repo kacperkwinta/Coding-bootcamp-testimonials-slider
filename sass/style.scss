@@ -1,0 +1,259 @@
+:root {
+	--color-one: hsl(240, 38%, 20%);
+	--color-two: hsl(240, 18%, 77%);
+}
+
+* {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: "Inter", sans-serif;
+	line-height: 1.4;
+}
+
+body {
+	font-size: 3.2rem;
+	background: url(../images/pattern-bg.svg) no-repeat no-repeat left 77.7% top
+			48.5%,
+		url(../images/pattern-curve.svg) no-repeat no-repeat left 0% bottom 0%;
+}
+
+main {
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	flex-direction: column;
+	gap: 9.6rem;
+}
+
+article {
+	padding: 0 2.4rem;
+	// border: 1px solid red;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box-text {
+	max-width: 65rem;
+	transform: translateX(8rem);
+	position: relative;
+	z-index: 200;
+
+	// border: 1px solid tomato;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: -6.4rem;
+		left: 10rem;
+		height: 10rem;
+		width: 12rem;
+		background-repeat: no-repeat no-repeat;
+		background-image: url(../images/pattern-quotes.svg);
+	}
+}
+
+.box-img {
+	position: relative;
+	z-index: 100;
+
+	.graduate-img {
+		display: block;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+		border-radius: 4px;
+	}
+
+	// wrapper for buttons!
+	.wrapper {
+		position: absolute;
+		left: 15%;
+		bottom: -5%;
+
+		// background-color: #fff;
+		border-radius: 10rem;
+		width: fit-content;
+		overflow: hidden;
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+
+		.btn {
+			cursor: pointer;
+			padding: 1.6rem 2.4rem;
+			border: none;
+			background-color: #fff;
+			transition: all 0.3s ease;
+
+			&:hover {
+				background-color: darken(#fff, 5);
+			}
+
+			&:active {
+				background-color: darken(#fff, 12);
+			}
+		}
+	}
+}
+
+.graduate-opinion {
+	color: var(--color-one);
+	font-weight: 300;
+	margin-bottom: 1.2rem;
+}
+
+.graduate-name {
+	font-weight: 700;
+	font-size: 1.8rem;
+	color: var(--color-one);
+}
+
+.graduate-role {
+	font-size: 1.8rem;
+
+	color: var(--color-two);
+}
+
+//////////////
+// ATTRIBUTION
+
+.attribution {
+	font-size: 1.3rem;
+
+	a:link,
+	a:visited {
+		color: var(--color-one);
+		transition: all 0.3s ease;
+	}
+
+	a:hover,
+	a:active {
+		color: var(--color-two);
+	}
+}
+
+///////////////
+// below 900 px
+@media (max-width: 56.25em) {
+	body {
+		font-size: 2.4rem;
+		background: url(../images/pattern-bg.svg) no-repeat no-repeat left 60% top
+				10% / 50rem,
+			url(../images/pattern-curve.svg) no-repeat no-repeat left 0% bottom 0%;
+		// background-size: 60%;
+	}
+
+	main {
+		height: auto;
+		padding: 4.8rem 0;
+
+		gap: 4.8rem;
+	}
+
+	article {
+		flex-direction: column-reverse;
+		gap: 12.6rem;
+	}
+
+	.box-text {
+		max-width: 40rem;
+		transform: translateX(0);
+		position: relative;
+		z-index: 200;
+		text-align: center;
+
+		display: flex;
+		flex-direction: column;
+
+		&::before {
+			left: 50%;
+			top: -20%;
+			transform: translateX(-50%) scale(0.5);
+		}
+
+		.graduate-info {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.box-img {
+		.graduate-img {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		// wrapper for buttons!
+		.wrapper {
+			left: 50%;
+			bottom: -6.5%;
+
+			transform: translateX(-50%);
+
+			.btn {
+				cursor: pointer;
+				padding: 1.6rem 2.4rem;
+				border: none;
+				background-color: none;
+			}
+		}
+	}
+}
+
+///////////////
+// below 525 px
+@media (max-width: 32.8125em) {
+	body {
+		background: url(../images/pattern-bg.svg) no-repeat no-repeat left 60% top
+				3% / 90%,
+			url(../images/pattern-curve.svg) no-repeat no-repeat left 0% bottom 0% /90%;
+	}
+
+	.box-img {
+		// wrapper for buttons!
+		.wrapper {
+			.btn {
+				padding: 1.2rem 1.8rem;
+			}
+		}
+	}
+}
+
+///////////////
+// below 425 px
+@media (max-width: 26.5625em) {
+	body {
+		background: url(../images/pattern-bg.svg) no-repeat no-repeat left 90% top
+				10% / 100%,
+			url(../images/pattern-curve.svg) no-repeat no-repeat left 0% bottom 0% /90%;
+	}
+	main {
+		gap: 4.8rem;
+	}
+
+	.box-img {
+		.graduate-img {
+			width: 100%;
+		}
+
+		// wrapper for buttons!
+		.wrapper {
+			left: 50%;
+			bottom: -2.5rem;
+
+			transform: translateX(-50%);
+		}
+	}
+}
